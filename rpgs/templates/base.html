@@ -1,0 +1,56 @@
+
+
+{% load static %}
+
+
+
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>
+            {% block title %}{% endblock %}
+        </title>
+        <meta name="description" content="" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        <link rel="icon" type="image/x-icon" href="{% static 'images/logo.png' %}">
+
+        {# Global stylesheets #}
+        <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+
+        {% block extra_css %}
+            {# Override this in templates to add extra stylesheets #}
+        {% endblock %}
+
+
+        {# Global javascript #}
+        <script type="text/javascript" src="{% static 'js/bundle.js' %}"></script>
+        {% block extra_js %}
+            {# Override this in templates to add extra javascript #}
+        {% endblock %}
+    </head>
+    <body>
+        <header>
+            <div class="headerwrap">
+                <img class="logo" src="{% static 'images/logo.png' %}" alt="" /><h1>Wollrobbes Playground!</h1>
+            </div>
+        </header>
+
+        {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+        
+        <div class="content">
+            {% block content %}{% endblock %}
+        </div>
+        
+        <footer>
+            <p>Hier wird ein wenig getestet!</p>
+        </footer>
+    </body>
+</html>
