@@ -1,5 +1,6 @@
 from django.contrib.auth.models import AbstractUser
 from django_ckeditor_5.fields import CKEditor5Field
+from .managers import CustomUserManager
 from django.db import models
 
 
@@ -23,16 +24,12 @@ class User(AbstractUser):
 
     description = CKEditor5Field(verbose_name="Description")
 
+    objects = CustomUserManager()
+
     class Meta:
         verbose_name = "User"
         verbose_name_plural = "Users"
-        permissions = (
-            ("can_create_user", "create user"),
-            ("can_modify_user", "modify user"),
-            ("can_modify_user_email", "modify user email"),
-            ("can_view_userlist", "can view userlist"),
-        )
 
     def __str__(self):
-        return self.username
+        return self.nickname
 
