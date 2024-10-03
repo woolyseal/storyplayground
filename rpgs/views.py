@@ -1,12 +1,13 @@
 from django.http import HttpResponse
-from django.views.generic.base import TemplateView
+from django.views.generic import ListView
 
+from .models import RolePlay
 
-class RPGListView(TemplateView):
-    template_name = 'rpg_list.html'
+class RPGListView(ListView):
+    model = RolePlay
+    template_name = "rpg_list.html"
+    context_object_name = "rpg_list"
 
-def index(request):
-    return HttpResponse("Hello, world. You're at the rpgs index.")
 
 def detail(request, rpg_id):
     return HttpResponse("You're looking at rpg %s." % rpg_id)

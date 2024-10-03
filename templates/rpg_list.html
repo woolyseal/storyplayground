@@ -2,4 +2,12 @@
 
 {% block content %}
 <h2>Liste von RPGs</h2>
+{% if rpg_list %}
+    {% for rpg in rpg_list %}
+        {{ rpg.title }}
+    {% endfor %}
+{% else %}
+    <div>Keine RPGs vorhanden</div>
+{% endif %}
+
 {% endblock %}

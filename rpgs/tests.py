@@ -4,9 +4,25 @@ from django.contrib.auth import get_user_model
 
 
 class RolePlayModelTest(TestCase):
+    # Will be needed in the future
+    # def setUp(self):
+    #     self.user = get_user_model().objects.create(username="normaltest", email="normal@user.com", password="foo", nickname="normaltest")
+
     def test_roleplay_model_exists(self):
         roleplay = RolePlay.objects.count()
         self.assertGreaterEqual(roleplay, 0)
+
+    def test_one_entry(self):
+        RolePlay.objects.create(title='1-title', description='1-body')
+        response = self.client.get('/rpgs/')
+        self.assertContains(response, '1-title')
+
+    def test_two_entries(self):
+        RolePlay.objects.create(title='1-title', description='1-body')
+        RolePlay.objects.create(title='2-title', description='2-body')
+        response = self.client.get('/rpgs/')
+        self.assertContains(response, '1-title')
+        self.assertContains(response, '2-title')
 
 
 class FrontEndViewTest(TestCase):
