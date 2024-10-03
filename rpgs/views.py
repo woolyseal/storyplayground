@@ -1,4 +1,4 @@
-from django.views.generic import ListView, DetailView
+from django.views.generic import ListView, DetailView, CreateView
 
 from .models import RolePlay
 
@@ -12,3 +12,9 @@ class RolePlayDetail(DetailView):
     model = RolePlay
     template_name = "rpg.html"
     context_object_name = "rpg"
+
+
+class AddRPGView(CreateView):
+    model = RolePlay
+    template_name = "add_rpg.html"
+    fields = ["title", "description"]
