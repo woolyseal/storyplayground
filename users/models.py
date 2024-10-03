@@ -24,8 +24,6 @@ class User(AbstractUser):
 
     description = CKEditor5Field(verbose_name="Description")
 
-    objects = CustomUserManager()
-
     class Meta:
         verbose_name = "User"
         verbose_name_plural = "Users"
