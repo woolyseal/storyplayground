@@ -1,6 +1,7 @@
 from django.views.generic import ListView, DetailView, CreateView
 
 from .models import RolePlay
+from .forms import RolePlayForm
 
 class RPGListView(ListView):
     model = RolePlay
@@ -15,6 +16,6 @@ class RolePlayDetail(DetailView):
 
 
 class AddRPGView(CreateView):
+    form_class = RolePlayForm
     model = RolePlay
     template_name = "add_rpg.html"
-    fields = ["title", "description"]
