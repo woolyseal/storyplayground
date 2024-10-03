@@ -1,0 +1,14 @@
+@use 'breakpoints' as *;
+
+@mixin mq($key, $type: min) {
+  $size: map-get($breakpoints, $key);
+
+  // TODO: Check if condition works
+  @if $type == max {
+    $size: calc($size - 1px);
+  }
+
+  @media only screen and (#{$type}-width: $size) {
+    @content;
+  }
+}

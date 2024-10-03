@@ -1,0 +1,15 @@
+{
+  "name": "storyplayground",
+  "version": "1.0.0",
+  "description": "## Platform for cooperative storytelling in form of written roleplays",
+  "main": "index.js",
+  "scripts": {
+    "sass:watch": "sass --source-map -w static_src/scss/index.scss static/css/styles.css",
+    "sass:release": "sass --style=compressed static_src/scss/index.scss static/css/styles.css"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "sass": "^1.49.9"
+  }
+}

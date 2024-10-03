@@ -1,0 +1,18 @@
+// 1st value: $min-size
+// 2nd value: $max-size
+$type-scale: (
+  // mini/small
+  200: (12px, 12px),
+  // normal text
+  300: (16px, 16px),
+  // h4
+  400: (20px, 20px),
+  // h3
+  500: (24px, 24px),
+  // h2
+  600: (34px, 34px),
+  // h1
+  700: (38px, 38px),
+  // hero
+  800: (60px, 60px)
+);
