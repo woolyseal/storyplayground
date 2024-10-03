@@ -89,4 +89,19 @@ a:hover, a:focus {
   color: var(--hover);
 }
 
+header {
+  display: flex;
+  justify-content: space-between;
+}
+header .headerwrap a {
+  display: flex;
+  text-decoration: none;
+}
+header .headerwrap a h1 {
+  margin: auto 10px;
+}
+header .headerwrap a img {
+  max-width: 150px;
+}
+
 /*# sourceMappingURL=styles.css.map */
