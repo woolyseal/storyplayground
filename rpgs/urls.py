@@ -4,5 +4,6 @@ from . import views
 
 urlpatterns = [
     path("", views.RPGListView.as_view(), name="rpg_list"),
-    path("<int:rpg_id>/", views.detail, name="detail"),
+    path("<int:pk>/", views.RolePlayDetail.as_view(), name="rpg"),
+    path("addRPG", views.AddRPGView.as_view()),
 ]

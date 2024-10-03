@@ -1,5 +1,4 @@
-from django.http import HttpResponse
-from django.views.generic import ListView
+from django.views.generic import ListView, DetailView, CreateView
 
 from .models import RolePlay
 
@@ -9,5 +8,13 @@ class RPGListView(ListView):
     context_object_name = "rpg_list"
 
 
-def detail(request, rpg_id):
-    return HttpResponse("You're looking at rpg %s." % rpg_id)
+class RolePlayDetail(DetailView):
+    model = RolePlay
+    template_name = "rpg.html"
+    context_object_name = "rpg"
+
+
+class AddRPGView(CreateView):
+    model = RolePlay
+    template_name = "add_rpg.html"
+    fields = ["title", "description"]

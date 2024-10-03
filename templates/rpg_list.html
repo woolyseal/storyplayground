@@ -4,7 +4,7 @@
 <h2>Liste von RPGs</h2>
 {% if rpg_list %}
     {% for rpg in rpg_list %}
-        {{ rpg.title }}
+        <a href="{{ rpg.get_absolute_url }}">{{ rpg.title }}</a>
     {% endfor %}
 {% else %}
     <div>Keine RPGs vorhanden</div>

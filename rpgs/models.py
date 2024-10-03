@@ -1,5 +1,6 @@
 from django.db import models
 from django_ckeditor_5.fields import CKEditor5Field
+from django.urls import reverse
 
 
 # Model for the Roleplay itself
@@ -16,3 +17,6 @@ class RolePlay(models.Model):
 
     def __str__(self):
         return f"Roleplay: {self.title}"
+
+    def get_absolute_url(self):
+        return reverse('rpg', kwargs={'pk': self.pk})

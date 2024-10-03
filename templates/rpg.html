@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h2>Willkommen auf meinem Playground!</h2>
-{% lorem %}
+<h2>{{ rpg.title }}</h2>
+<p>{{ rpg.description | safe }}</p>
+
 {% endblock %}
