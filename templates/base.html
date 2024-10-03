@@ -29,8 +29,13 @@
     <body>
         <header>
             <div class="headerwrap">
-                <img class="logo" src="{% static 'images/logo.jpg' %}" alt="" /><h1>Wollrobbes Playground!</h1>
+                <a href="/" rel="noreferer noopener" title="Home" alt="Homelink">
+                    <img class="logo" src="{% static 'images/logo.jpg' %}" alt="" /><h1>Wollrobbes Playground!</h1>
+                </a>
             </div>
+            <nav>
+                <a href="{% url 'rpg_list' %}">RPGs</a> | Nutzer | Charakter
+            </nav>
         </header>
 
         {% if messages %}

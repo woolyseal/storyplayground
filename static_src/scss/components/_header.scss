@@ -1,0 +1,16 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  .headerwrap {
+    a {
+      display: flex;
+      text-decoration: none;
+      h1 {
+        margin: auto 10px;
+      }
+      img {
+        max-width: 150px;
+      }
+    }
+  }
+}
