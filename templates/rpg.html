@@ -4,4 +4,8 @@
 <h2>{{ rpg.title }}</h2>
 <p>{{ rpg.description | safe }}</p>
 
+<form class="rpg-delete-form" action="./delete/">
+    <input type="submit" value="RPG löschen" />
+</form>
+
 {% endblock %}
