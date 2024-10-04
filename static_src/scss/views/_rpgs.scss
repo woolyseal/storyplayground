@@ -12,6 +12,11 @@
       }
     }
   }
+  .no-rpglist {
+    padding: 1rem;
+    border: 1px solid var(--clr-warning);
+    border-radius: 0.5rem;
+  }
   .rpg-add-form {
     input {
       background-color: var(--clr-primary);

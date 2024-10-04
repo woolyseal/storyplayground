@@ -4,6 +4,9 @@
   --clr-accent: #a6daae;
   --clr-primary: #548870;
   --clr-secondary: #6da68d;
+  --clr-alert: #cc0002;
+  --clr-warning: #e1a100;
+  --clr-info: #0066cc;
   --fs-200: 0.75rem;
   --fs-300: 1rem;
   --fs-400: 1.25rem;
@@ -130,6 +133,11 @@ footer {
 }
 .rpglist-container .rpglist__item a {
   text-decoration: none;
+}
+.rpglist-container .no-rpglist {
+  padding: 1rem;
+  border: 1px solid var(--clr-warning);
+  border-radius: 0.5rem;
 }
 .rpglist-container .rpg-add-form input {
   background-color: var(--clr-primary);
