@@ -1,6 +1,7 @@
 from django.db import models
-from django_ckeditor_5.fields import CKEditor5Field
+from users.models import User
 from django.urls import reverse
+from django_ckeditor_5.fields import CKEditor5Field
 
 
 # Model for the Roleplay itself
@@ -9,7 +10,8 @@ from django.urls import reverse
 class RolePlay(models.Model):
     title = models.CharField(verbose_name="Title",
                              max_length=1024)
-    description = CKEditor5Field(verbose_name="Description")
+    description = CKEditor5Field(verbose_name="Description", config_name='extends', null=True, blank=True)
+    administrator = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
 
     class Meta:
         verbose_name = "Roleplay"

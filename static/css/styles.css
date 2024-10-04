@@ -118,4 +118,24 @@ footer {
   justify-content: center;
 }
 
+.rpglist-container .rpglist {
+  list-style: none;
+  padding: 0;
+}
+.rpglist-container .rpglist__item {
+  background-color: var(--clr-accent);
+  border: 1px solid var(--clr-primary);
+  margin: 1rem auto;
+  padding: 2rem 1rem;
+}
+.rpglist-container .rpglist__item a {
+  text-decoration: none;
+}
+.rpglist-container .rpg-add-form input {
+  background-color: var(--clr-primary);
+  color: var(--clr-accent);
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+
 /*# sourceMappingURL=styles.css.map */

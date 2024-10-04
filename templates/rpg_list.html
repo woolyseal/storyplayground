@@ -1,13 +1,23 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h2>Liste von RPGs</h2>
-{% if rpg_list %}
-    {% for rpg in rpg_list %}
-        <a href="{{ rpg.get_absolute_url }}">{{ rpg.title }}</a>
-    {% endfor %}
-{% else %}
-    <div>Keine RPGs vorhanden</div>
-{% endif %}
+<div class="rpglist-container">
+  <h2>Liste von RPGs</h2>
+  {% if rpg_list %}
+    <ul class="rpglist">
+      {% for rpg in rpg_list %}
+        <li class="rpglist__item">
+          <a href="{{ rpg.get_absolute_url }}">{{ rpg.title }}</a> by {{ rpg.administrator }}
+        </li>
+      {% endfor %}
+    </ul>
+  {% else %}
+      <div>Keine RPGs vorhanden</div>
+  {% endif %}
+
+  <form class="rpg-add-form" action="./addRPG">
+      <input type="submit" value="RPG hinzufügen" />
+  </form>
+</div>
 
 {% endblock %}

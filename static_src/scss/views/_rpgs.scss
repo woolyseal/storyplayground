@@ -1,0 +1,23 @@
+.rpglist-container {
+  .rpglist {
+    list-style: none;
+    padding: 0;
+    &__item {
+      background-color: var(--clr-accent);
+      border: 1px solid var(--clr-primary);
+      margin: 1rem auto;
+      padding: 2rem 1rem;
+      a {
+        text-decoration: none;
+      }
+    }
+  }
+  .rpg-add-form {
+    input {
+      background-color: var(--clr-primary);
+      color: var(--clr-accent);
+      padding: 1rem;
+      border-radius: 0.5rem;
+    }
+  }
+}

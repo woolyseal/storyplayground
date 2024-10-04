@@ -7,12 +7,7 @@
 <form method="post">{% csrf_token %}
 
     {{ form.media}}
-    {% for field in form %}
-    <div class="form-group">
-        <div><label for="{{ field.id_for_label }}" class="text-dark">{{ field.label }}: </label></div>
-        {{ field }}
-    </div>
-    {% endfor %}
+    {{ form.as_p }}
 
     <input type="submit" value="Speichern" />
 </form>
